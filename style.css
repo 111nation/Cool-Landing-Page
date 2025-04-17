@@ -29,15 +29,25 @@ body p {
         z-index:-1;
 }
 
-#window {
-        border: 4px solid rgb(244, 184, 228); 
-        background-color:rgb(35, 38, 52);
-        border-radius:15px;
-
+#window-container {
         width:75vw;
         aspect-ratio: 16/9;    
         max-width: 800px;
         min-width: 350px;
+        
+        display: flex;
+        justify-content:center;
+        align-items:center;
+}
+
+#window {
+        visibility:hidden;
+        border: 4px solid rgb(244, 184, 228); 
+        background-color:rgb(35, 38, 52);
+        border-radius:15px;
+        
+        width: 100%;
+        height: 100%;
         padding:0.2% 0.2%;
         
         box-shadow: 0 0 30px 0.2vw rgba(0,0,0,0.8); 
@@ -113,7 +123,10 @@ body p {
 #profile-image {
         display: inline-block;
         border-radius: 100%;
-        background: rgb(238, 190, 190);
+        /*background: rgb(238, 190, 190);*/
+        background: url("https://avatars.githubusercontent.com/u/179636637?v=4");
+        background-size: cover;
+        background-repeat: no-repeat;
 
         margin-left: 7%;        
         height: 100%;
@@ -165,7 +178,8 @@ body p {
         border-radius: 5px;
         cursor: pointer;
         user-select:none;
-        
+        overflow: hidden;
+
         transition: 0.3s;
 }
 
@@ -195,6 +209,7 @@ body p {
         box-sizing: border-box;
 
         overflow-y: auto;
+        scrollbar-width: none;
 }
 
 #content-container:hover {
